@@ -15,6 +15,23 @@
 
   gtag('config', 'AW-18071800226');
 </script>
+<!-- Event snippet for Whatsapp Click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18071800226/Az9rCMb-l6YcEKKTp6lD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
 <body>
   <header class="site-header">
@@ -44,7 +61,7 @@
           <div class="hero-actions">
             <a href="contact.html" class="button button-primary">Get Free Consultation</a>
             <a href="#services" class="button button-secondary">Explore Services</a>
-            <a href="https://wa.me/7909042424" class="button button-secondary whatsapp-button" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+            <a href="https://wa.me/7909042424" class="button button-secondary whatsapp-button" target="_blank" rel="noreferrer" onclick="gtag_report_conversion('https://wa.me/7909042424')">Message on WhatsApp</a>
             <button type="button" class="button button-secondary popup-open-btn">View Ishita Image</button>
           </div>
         </div>
